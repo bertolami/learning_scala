@@ -13,8 +13,20 @@ object Chapter6 {
    * @param args the command line arguments
    */
   def main(args: Array[String]) :Unit = {
-    val r = new Rational(3,4)
-    println(r)
-  }
+    val oneHalf = new Rational(1,2)
+    val twoThird = new Rational(2,3)
+    val three = new Rational(3)
+    println(three)
+    println(oneHalf + twoThird)
+    println(oneHalf < twoThird)
+    println(oneHalf max twoThird)
+    println(oneHalf * twoThird)
+
+    val elevenSeven = new Rational(66, 42)
+    println(elevenSeven)
+    println(elevenSeven + 1)
+
+    }
+
 
 }
