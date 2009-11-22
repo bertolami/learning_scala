@@ -18,15 +18,23 @@ class Rational(n: Int, d: Int) {
     override def toString =  numer +"/"+denom
 
     def +(that: Rational) =
-        new Rational(numer* that.denom +that.numer * denom, denom* that.denom)
+    new Rational(numer* that.denom +that.numer * denom, denom* that.denom)
 
     def +(i: Int) =
-        new Rational(numer + i * denom, denom)
+    new Rational(numer + i * denom, denom)
 
-    
+    def -(that: Rational) = new Rational(numer * that.denom - that.numer * denom, denom * that.denom)
+
+    def -(i: Int) = new Rational(numer - i * denom, denom)
 
     def *(that: Rational) =
-        new Rational(numer* that.numer, denom* that.denom)
+    new Rational(numer* that.numer, denom* that.denom)
+
+    def *(i: Int) =  new Rational(numer* i*denom, denom)
+
+    def /(that: Rational) = new Rational(numer * that.denom, denom * that.numer)
+
+    def /(i: Int) = new Rational(numer, denom * i)
 
     def <(that: Rational) = this.numer * that.denom < that.numer * this.denom
 
