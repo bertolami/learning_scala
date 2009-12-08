@@ -24,6 +24,24 @@ object Chapter7 {
         fileForLoop
 
         grep(".*gcd.*")
+
+        exceptions(4)
+       val result = try {
+            exceptions(3)
+        } catch {
+            case ex: RuntimeException =>  "catched runtime exception"
+        } finally {
+            println("done")
+        }
+        println(result)
+
+        val table = new MultiplicationTable
+        println(table.multiTable)
+
+    }
+
+    def exceptions(n: Int)  = {
+        if(n %2 == 0) n/2 else throw new RuntimeException("n must be even")
     }
 
     def scalaFiles = {
