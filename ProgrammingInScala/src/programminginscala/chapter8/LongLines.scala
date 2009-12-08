@@ -11,16 +11,17 @@ import java.io.File
 
 object LongLines {
     def processFile(filename: File, width: Int) {
+        def processLine(line: String) {
+            if(line.length > width) {
+                println(filename.getName+" " + line.trim);
+            }
+        }
         val source = Source.fromFile(filename)
         for(line <- source.getLines) {
-            processLine(filename, width, line)
+            processLine(line)
         }
     }
 
 
-    private def processLine(filename: File, width: Int, line: String) {
-        if(line.length > width) {
-            println(filename.getName+" " + line.trim);
-        }
-    }
+    
 }
