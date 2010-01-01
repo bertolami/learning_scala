@@ -18,7 +18,12 @@ object Chapter8 {
       FirstClassFunctions.process
       PartiallyAppliedFunctions.process
       Closures.process
+
+      val arr = Array("What's", "up", "doc?")
+      echo(arr: _*)
   }
+
+  def echo(args: String*) = for(arg <- args) println(arg)
   
   def filesHere = (new java.io.File("src/programminginscala/chapter8")).listFiles
 
