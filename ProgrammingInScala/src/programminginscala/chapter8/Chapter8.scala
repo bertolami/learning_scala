@@ -15,6 +15,9 @@ object Chapter8 {
   def main(args: Array[String]) :Unit = {
       for(file <- filesHere)
         LongLines.processFile(file, 25)
+      FirstClassFunctions.process
+      PartiallyAppliedFunctions.process
+      Closures.process
   }
   
   def filesHere = (new java.io.File("src/programminginscala/chapter8")).listFiles
