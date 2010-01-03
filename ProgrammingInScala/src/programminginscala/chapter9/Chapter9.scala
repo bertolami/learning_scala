@@ -26,6 +26,13 @@ object Chapter9 {
         regexFiles.foreach(println)
 
         ContainsChecker.process
+
+        println(Currying.plainOldSum(2, 3))
+
+        println(Currying.curriedSum(2)(3))
+
+        val onePlus = Currying.curriedSum(1)_
+        println(onePlus(3))
     }
 
 }
