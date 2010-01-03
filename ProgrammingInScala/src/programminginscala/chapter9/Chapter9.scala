@@ -7,6 +7,13 @@
 
 package programminginscala.chapter9
 
+import WithPrintWriter.withPrintWriter
+import java.io.File
+import java.util.Date
+import MyAssert.myAssert
+
+import MyAssert.byNameAssert
+
 object Chapter9 {
 
     /**
@@ -33,6 +40,16 @@ object Chapter9 {
 
         val onePlus = Currying.curriedSum(1)_
         println(onePlus(3))
+
+        println(ControlStructures.twice(_ + 1, 5))
+
+        withPrintWriter(new File("src/programminginscala/chapter9/date.txt")) {
+            writer => writer.println(new Date())
+        }
+
+        myAssert(() => 5 > 3)
+
+        byNameAssert(5 > 3)
     }
 
 }
