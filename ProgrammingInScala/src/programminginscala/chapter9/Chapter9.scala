@@ -13,7 +13,17 @@ object Chapter9 {
    * @param args the command line arguments
    */
   def main(args: Array[String]) :Unit = {
-    FileMatcher.filesEnding("scala")
-  }
+      println("ending")
+      val scalaFiles = FileMatcher.filesEnding("scala")
+      scalaFiles.foreach(println)
+
+      println("containing")
+      val matcherFiles = FileMatcher.filesContaining("Matcher")
+      matcherFiles.foreach(println)
+
+      println("regex")
+      val regexFiles = FileMatcher.filesRegex(".*Ch.*pter.*");
+      regexFiles.foreach(println)
+    }
 
 }
